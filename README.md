@@ -83,5 +83,5 @@ NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL="http://localhost:3000"
 
 7. **Access the application**
    
-   Open [http://localhost:3001](http://localhost:3001) in your browser.
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 

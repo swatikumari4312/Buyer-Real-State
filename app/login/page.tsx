@@ -50,20 +50,20 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4">
-      <Card className="w-full max-w-md shadow-2xl border-0 rounded-2xl overflow-hidden">
-        <CardHeader className="text-center bg-gradient-to-r from-white/90 via-white/80 to-white/70 p-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br bg-gray-200/20 ">
+      <Card className="w-full max-w-md border-2 rounded-2xl overflow-hidden">
+        <CardHeader className="text-center bg-gray-100">
           <div className="flex justify-center mb-4">
-            <Building2 className="h-12 w-12 text-indigo-600 animate-pulse" />
+            <Building2 className="h-12 w-12 text-black " />
           </div>
           <CardTitle className="text-3xl font-extrabold text-gray-800">
             Welcome Back
           </CardTitle>
           <CardDescription className="text-gray-600">
-            Sign in to your <span className="font-semibold text-indigo-600">Buyer Lead CRM</span>
+            Sign in to your <span className="font-semibold text-gray-600">Buyer Lead CRM</span>
           </CardDescription>
         </CardHeader>
-        <CardContent className="bg-white/90 backdrop-blur-md p-6 rounded-b-2xl">
+        <CardContent className="bg-gray-100 backdrop-blur-md p-6 rounded-b-2xl">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-gray-700 font-medium">
@@ -77,7 +77,7 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
-                className="focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="focus:ring-2 focus:ring-gray-500 transition-all"
               />
             </div>
             <div className="space-y-2">
@@ -92,17 +92,17 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={isLoading}
-                className="focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="focus:ring-2 focus:ring-gray-500 transition-all"
               />
             </div>
             {error && (
-              <Alert variant="destructive" className="border-red-500 bg-red-50">
-                <AlertDescription className="text-red-700">{error}</AlertDescription>
+              <Alert variant="destructive" className=" bg-red-50">
+                <AlertDescription className="text-gray-700">{error}</AlertDescription>
               </Alert>
             )}
             <Button
               type="submit"
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-all shadow-md"
+              className="w-full bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all shadow-md"
               disabled={isLoading}
             >
               {isLoading ? (
