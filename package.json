@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
-  },
+  "build": "next build",
+  "dev": "next dev",
+  "lint": "next lint",
+  "start": "next start",
+  "db:generate": "drizzle-kit generate:types",
+  "db:migrate:push": "drizzle-kit push",
+  "db:migrate:apply": "drizzle-kit migrate:apply",
+  "db:migrate:status": "drizzle-kit migrate:status"
+},
   "dependencies": {
     "@aws-sdk/client-rds-data": "latest",
     "@cloudflare/workers-types": "latest",
@@ -70,6 +74,7 @@
     "drizzle-orm": "latest",
     "embla-carousel-react": "latest",
     "expo-sqlite": "latest",
+    "framer-motion": "^12.23.12",
     "geist": "latest",
     "gel": "latest",
     "input-otp": "latest",

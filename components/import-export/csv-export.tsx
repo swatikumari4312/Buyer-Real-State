@@ -70,7 +70,7 @@ export function CSVExport() {
       <CardContent className="space-y-4">
         {hasFilters && (
           <div className="flex items-center space-x-2">
-            <Checkbox id="exportFiltered" checked={exportFiltered} onCheckedChange={setExportFiltered} />
+            <Checkbox id="exportFiltered" checked={exportFiltered}  />
             <label
               htmlFor="exportFiltered"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -98,7 +98,7 @@ export function CSVExport() {
           </Alert>
         )}
 
-        <Button onClick={handleExport} disabled={isExporting}>
+        <Button className="bg-blue-600" onClick={handleExport} disabled={isExporting}>
           {isExporting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />

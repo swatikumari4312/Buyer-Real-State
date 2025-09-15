@@ -20,7 +20,7 @@ export const statusEnum = pgEnum("status", [
 
 // Users table
 export const users = pgTable("users", {
-  id: uuid("id").primaryKey().default(createId()),
+  id: uuid("id").primaryKey().defaultRandom(),
   email: varchar("email", { length: 255 }).notNull().unique(),
   name: varchar("name", { length: 255 }).notNull(),
   passwordHash: varchar("password_hash", { length: 255 }).notNull(),
@@ -31,7 +31,7 @@ export const users = pgTable("users", {
 
 // Buyers table (leads)
 export const buyers = pgTable("buyers", {
-  id: uuid("id").primaryKey().default(createId()),
+  id: uuid("id").primaryKey().defaultRandom(),
   fullName: varchar("full_name", { length: 80 }).notNull(),
   email: varchar("email", { length: 255 }),
   phone: varchar("phone", { length: 15 }).notNull(),
@@ -55,7 +55,7 @@ export const buyers = pgTable("buyers", {
 
 // Buyer history table
 export const buyerHistory = pgTable("buyer_history", {
-  id: uuid("id").primaryKey().default(createId()),
+  id: uuid("id").primaryKey().defaultRandom(),
   buyerId: uuid("buyer_id")
     .references(() => buyers.id)
     .notNull(),

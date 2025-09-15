@@ -1,14 +1,19 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Building2, Loader2 } from "lucide-react"
 
@@ -45,19 +50,25 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-muted/50 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4">
+      <Card className="w-full max-w-md shadow-2xl border-0 rounded-2xl overflow-hidden">
+        <CardHeader className="text-center bg-gradient-to-r from-white/90 via-white/80 to-white/70 p-8">
           <div className="flex justify-center mb-4">
-            <Building2 className="h-12 w-12 text-primary" />
+            <Building2 className="h-12 w-12 text-indigo-600 animate-pulse" />
           </div>
-          <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
-          <CardDescription>Sign in to your Buyer Lead CRM account</CardDescription>
+          <CardTitle className="text-3xl font-extrabold text-gray-800">
+            Welcome Back
+          </CardTitle>
+          <CardDescription className="text-gray-600">
+            Sign in to your <span className="font-semibold text-indigo-600">Buyer Lead CRM</span>
+          </CardDescription>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <CardContent className="bg-white/90 backdrop-blur-md p-6 rounded-b-2xl">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-gray-700 font-medium">
+                Email
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -66,10 +77,13 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
+                className="focus:ring-2 focus:ring-indigo-500 transition-all"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-gray-700 font-medium">
+                Password
+              </Label>
               <Input
                 id="password"
                 type="password"
@@ -78,14 +92,19 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={isLoading}
+                className="focus:ring-2 focus:ring-indigo-500 transition-all"
               />
             </div>
             {error && (
-              <Alert variant="destructive">
-                <AlertDescription>{error}</AlertDescription>
+              <Alert variant="destructive" className="border-red-500 bg-red-50">
+                <AlertDescription className="text-red-700">{error}</AlertDescription>
               </Alert>
             )}
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-all shadow-md"
+              disabled={isLoading}
+            >
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -97,10 +116,15 @@ export default function LoginPage() {
             </Button>
           </form>
           <div className="mt-6 text-center text-sm">
-            <p className="text-muted-foreground">Demo credentials: demo@example.com / password</p>
-            <p className="mt-2">
-              Don't have an account?{" "}
-              <Link href="/register" className="text-primary hover:underline">
+            <p className="text-gray-500">
+              Demo credentials: <span className="font-semibold">demo@example.com / password</span>
+            </p>
+            <p className="mt-2 text-gray-600">
+              Don&apos;t have an account?{" "}
+              <Link
+                href="/register"
+                className="text-indigo-600 font-semibold hover:underline transition-colors"
+              >
                 Sign up
               </Link>
             </p>

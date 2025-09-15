@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: "Buyer Lead CRM - Real Estate Lead Management",
   description:
     "Professional CRM for managing real estate buyer leads with advanced filtering, CSV import/export, and comprehensive tracking.",
-  generator: "v0.app",
   keywords: ["CRM", "real estate", "leads", "buyer management", "property"],
   authors: [{ name: "Buyer Lead CRM" }],
   viewport: "width=device-width, initial-scale=1",

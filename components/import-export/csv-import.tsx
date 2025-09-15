@@ -127,7 +127,7 @@ export function CSVImport() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center gap-4">
-            <Button onClick={() => fileInputRef.current?.click()} disabled={isUploading}>
+            <Button className="bg-blue-700" onClick={() => fileInputRef.current?.click()} disabled={isUploading}>
               <FileText className="mr-2 h-4 w-4" />
               Select CSV File
             </Button>
